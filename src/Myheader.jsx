@@ -11,9 +11,9 @@ let obj={
 
 return(
     <div>
-<h1>Name:{obj.name}</h1>
-<h1>Name:{obj.nationality}</h1>
-<h1>Name:{obj.age}</h1>
+<h1 style={{backgroundColor:"green",color:"red"}}>Name:{obj.name}</h1>
+<h1 style={{backgroundColor:"green",color:"black"}}>Name:{obj.nationality}</h1>
+<h1 style={{backgroundColor:"green",color:"white"}}>Name:{obj.age}</h1>
 
 </div>
     )
