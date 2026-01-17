@@ -1,13 +1,19 @@
 export default function Myheader(){
-/* 
-when we have more then one item in component wen have to  
-wrap compenent items with  div or  react fragmant (<> </>)
+/* JSX use to write js code in html and html elements in js
 
 */
+let obj={
+    name:"hesham",
+    nationality:"yemen", 
+    age:37,
+   
+}
+
 return(
     <div>
-<h1>Header</h1>
-<h2>h2 from myheader</h2>
+<h1>Name:{obj.name}</h1>
+<h1>Name:{obj.nationality}</h1>
+<h1>Name:{obj.age}</h1>
 
 </div>
     )
