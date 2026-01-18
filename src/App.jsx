@@ -12,13 +12,15 @@ function App() {
   
     <Mycomponent/>
       <Myheader/>
-      <PersonCard/>
+    
+    <PersonCard name="hesham" age="37" country="YEMEN "/>
       <hr/>
-      <PersonCard/>
+      <PersonCard name="john " age="27" country="USA"/>
+    
       <hr/>
-      <PersonCard/>
+      <PersonCard name="dive" age={28} country="CANADA"/>
       <hr/>
-      <PersonCard/>
+      <PersonCard name="reco" age="23" country="canada"/>
       <hr/>
       <div>
         <a href="https://vite.dev" target="_blank">

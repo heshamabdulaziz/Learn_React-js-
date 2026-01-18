@@ -1,11 +1,11 @@
-export default function PersonCard(){
-
+export default function PersonCard(props){
+let {name,age,country}=props;
     return(
   <div style={{backgroundColor:"red",color:"whitesmoke"}}> 
-    <h2>hesham</h2>
-    <h2>37</h2>
-    <h2>yemen</h2>
-<hr/>
+    <h2>{name}</h2>
+    <h2>{age}</h2>
+    <h2>{country}</h2>
+
     </div>
 
 
