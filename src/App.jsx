@@ -13,12 +13,18 @@ function App() {
     <Mycomponent/>
       <Myheader/>
     
-    <PersonCard name="hesham" age="37" country="YEMEN " bgcolor="Red"/>
+    <PersonCard name="hesham" age="37" country="YEMEN " bgcolor="Red">
+     <h1 style={{backgroundColor:"black", color:"white"}}>Yemen</h1> 
+       </PersonCard>
+     
       <hr/>
-      <PersonCard name="john " age="27" country="USA" bgcolor="green"/>
+      <PersonCard name="john " age="27" country="USA" bgcolor="green">
+      <h1 style={{backgroundColor:"black", color:"white"}}>USA</h1>   </PersonCard>
     
       <hr/>
-      <PersonCard name="dive" age={28} country="CANADA" bgcolor="yellow"/>
+      <PersonCard name="dive" age={28} country="CANADA" bgcolor="yellow">
+    <h1 style={{backgroundColor:"black", color:"white"}}>CANADA</h1> 
+        </PersonCard>
       <hr/>
       <PersonCard name="reco" age="23" country="canada" bgcolor="brown"/>
       <hr/>
