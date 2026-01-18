@@ -4,20 +4,21 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Myheader from './Myheader'
 import PersonCard from './PersonCard'
+ const  x=true;
 function App() {
   const [count, setCount] = useState(0)
+ 
 
   return (
     <>
   
     <Mycomponent/>
+   
       <Myheader/>
     
-    <PersonCard name="hesham" age="37" country="YEMEN " bgcolor="Red">
-     <h1 style={{backgroundColor:"black", color:"white"}}>Yemen</h1> 
-       </PersonCard>
-     
-      <hr/>
+   
+       <Renderuser/>
+       <hr></hr>
       <PersonCard name="john " age="27" country="USA" bgcolor="green">
       <h1 style={{backgroundColor:"black", color:"white"}}>USA</h1>   </PersonCard>
     
@@ -61,6 +62,22 @@ function Mycomponent(){
 <h2> first react Component</h2>
 </>
   )
+}
+
+//condtional rendering 
+
+function Renderuser(){
+  if(x==true){
+    return(
+    <PersonCard name="hesham" age="37" country="YEMEN " bgcolor="Red">
+     <h1 style={{backgroundColor:"black", color:"white"}}>Yemen</h1> 
+       </PersonCard> )
+      }
+  else{
+     return null;}
+    
+
+
 }
 
 export default App
