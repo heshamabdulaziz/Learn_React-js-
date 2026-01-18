@@ -16,7 +16,7 @@ return(
         // call function using JSX
        } 
         <h1> {jsx()}</h1>
-<h1 className="h1 t" id="h1">Name:{obj.name}</h1>
+<h1 className="h1 name" id="h1">Name:{obj.name}</h1>
 <h1 style={{backgroundColor:"green",color:"black"}}>Name:{obj.nationality}</h1>
 <h1 style={{backgroundColor:"green",color:"white"}}>Name:{obj.age}</h1>
 

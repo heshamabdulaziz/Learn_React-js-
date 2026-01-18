@@ -3,13 +3,23 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Myheader from './Myheader'
+import PersonCard from './PersonCard'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Myheader/>
+  
     <Mycomponent/>
+      <Myheader/>
+      <PersonCard/>
+      <hr/>
+      <PersonCard/>
+      <hr/>
+      <PersonCard/>
+      <hr/>
+      <PersonCard/>
+      <hr/>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
