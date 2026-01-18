@@ -1,0 +1,8 @@
+.h1{
+    background-color: red;
+}
+
+#h1{
+    color: azure;
+}
+.t:hover{ background-color: green;font-size:xx-large;}
