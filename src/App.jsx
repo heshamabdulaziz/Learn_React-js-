@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Myheader from './Myheader'
 import PersonCard from './PersonCard'
- const  x=true;
+ const  show=true;
 function App() {
   const [count, setCount] = useState(0)
  
@@ -15,9 +15,22 @@ function App() {
     <Mycomponent/>
    
       <Myheader/>
+      {// condtional rendering we can use(&&, condtion?___ : ___ ,)
+      
+      } 
     
+  { show?(
+    <PersonCard name="hesham" age="37" country="YEMEN " bgcolor="Red">
+     <h2 style={{backgroundColor:"black", color:"white"}}>first way conditional rendering using ?__:___  santax</h2> 
+       </PersonCard> ):<h1>NO data</h1>}
    
-       <Renderuser/>
+    { 
+    
+    show&&<Renderuser/>
+    
+    }
+       
+
        <hr></hr>
       <PersonCard name="john " age="27" country="USA" bgcolor="green">
       <h1 style={{backgroundColor:"black", color:"white"}}>USA</h1>   </PersonCard>
@@ -67,15 +80,12 @@ function Mycomponent(){
 //condtional rendering 
 
 function Renderuser(){
-  if(x==true){
-    return(
+  //second way to make conditional rendering
+  return(
     <PersonCard name="hesham" age="37" country="YEMEN " bgcolor="Red">
-     <h1 style={{backgroundColor:"black", color:"white"}}>Yemen</h1> 
+     <h3 style={{backgroundColor:"black", color:"white"}}> second way conditional rendering using  && santax</h3> 
        </PersonCard> )
-      }
-  else{
-     return null;}
-    
+     
 
 
 }
