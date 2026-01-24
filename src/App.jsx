@@ -4,6 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Myheader from './Myheader'
 import PersonCard from './PersonCard'
+import RenderingLists from './RenderingLists'
+import Button from './Button'
+
  const  show=true;
 function App() {
   const [count, setCount] = useState(0)
@@ -11,10 +14,12 @@ function App() {
 
   return (
     <>
-  
+  <Button/>
     <Mycomponent/>
    
       <Myheader/>
+      <RenderingLists/>
+
       {// condtional rendering we can use(&&, condtion?___ : ___ ,)
       
       } 
