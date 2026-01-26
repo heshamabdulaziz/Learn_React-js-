@@ -5,7 +5,8 @@ import './App.css'
 import Myheader from './Myheader'
 import PersonCard from './PersonCard'
 import RenderingLists from './RenderingLists'
-import Button from './Button'
+import Button from './hooks/UseSate/Button'
+import Form from './hooks/Form'
 
  const  show=true;
 function App() {
@@ -14,6 +15,8 @@ function App() {
 
   return (
     <>
+    <Form/>
+    <hr/>
   <Button/>
     <Mycomponent/>
    

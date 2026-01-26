@@ -1,0 +1,39 @@
+import { useState } from "react";
+
+
+export default function Form(){
+    const [name,setName]=useState("");
+    const [email,setEmail]=useState("");
+    //<label htmlFor=""> Email: {email}</label>
+//<input type="text" onChange={(e)=>setEmail(e.target.value)}></input>
+const submithandler=()=>{
+    
+console.log(`Name:${name}   Email:${email}`);
+
+}
+ return(
+<div>
+<h2 style={{color:"red"}}>UseStateWheForms</h2>
+<form>
+<label> Name: </label> 
+
+<input type="text" onChange={(e)=>setName(e.target.value)}></input>
+<p>{name} </p>
+
+<label htmlFor=""> Email: </label>
+<input type="text" onChange={(e)=>setEmail(e.target.value)}></input>
+<p>{email} </p>
+<br/><br/>
+<button style={{backgroundColor:"blue",color:"white"}} onSubmit={submithandler} type="submit">Send</button>
+
+</form>
+
+
+</div>
+ 
+
+
+ )
+
+
+}
