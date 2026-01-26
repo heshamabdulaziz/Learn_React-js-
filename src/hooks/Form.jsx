@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function Form(){
     const [name,setName]=useState("");
     const [email,setEmail]=useState("");
+     const [text,setText]=useState("");
     //<label htmlFor=""> Email: {email}</label>
 //<input type="text" onChange={(e)=>setEmail(e.target.value)}></input>
 const handleSubmit=(e)=>{
@@ -26,6 +27,9 @@ console.log(`Name:${name}   Email:${email}`);
 <label htmlFor=""> Email: </label>
 <input type="Email" onChange={(e)=>setEmail(e.target.value)}></input>
 <p>{email} </p>
+<label htmlFor=""> Info: </label>
+<textarea onChange={(e)=>setText(e.target.value)}> </textarea>
+<p>{text} </p>
 <br/><br/>
 <button style={{backgroundColor:"blue",color:"white"}}  type="submit">Send</button>
 
