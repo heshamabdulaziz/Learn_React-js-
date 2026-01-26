@@ -4,15 +4,18 @@ import { useState } from "react";
 export default function Form(){
     const [name,setName]=useState("");
     const [email,setEmail]=useState("");
-     const [text,setText]=useState("");
-    //<label htmlFor=""> Email: {email}</label>
-//<input type="text" onChange={(e)=>setEmail(e.target.value)}></input>
-const handleSubmit=(e)=>{
-    e.preventDefault();
+     const [text,setText]=useState("initial value");
+     const [checkboxx,setcheckboxx]=useState(false);
+    
+     const handleTextarea=(e)=>{setText(e.target.value)}
+      const handleCheckbox=(e)=>{setcheckboxx(e.target.checked)}
+
+    const handleSubmit=(e)=>{
+       e.preventDefault();
 
     // prevent Default  reload using e.preventDefault()
     
-console.log(`Name:${name}   Email:${email}`);
+console.log(`Name:${name}   Email:${email}     INFO :Email:${text}`);
 
 }
  return(
@@ -21,15 +24,18 @@ console.log(`Name:${name}   Email:${email}`);
 <form onSubmit={handleSubmit}>
 <label> Name: </label> 
 
-<input type="text" onChange={(e)=>setName(e.target.value)}></input>
+<input type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
 <p>{name} </p>
 
 <label htmlFor=""> Email: </label>
-<input type="Email" onChange={(e)=>setEmail(e.target.value)}></input>
+<input type="Email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
 <p>{email} </p>
 <label htmlFor=""> Info: </label>
-<textarea onChange={(e)=>setText(e.target.value)}> </textarea>
+<textarea value={text} onChange={handleTextarea}> </textarea>
 <p>{text} </p>
+<label htmlFor=""> Are you student : </label>
+<input type="checkbox"  onChange={handleCheckbox}/>
+<p>{checkboxx} </p>
 <br/><br/>
 <button style={{backgroundColor:"blue",color:"white"}}  type="submit">Send</button>
 
