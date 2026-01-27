@@ -2,12 +2,22 @@ import { useState } from "react";
 
 
 export default function Form(){
-    const [name,setName]=useState("");
-    const [email,setEmail]=useState("");
+    //const [name,setName]=useState("");
+    //const [email,setEmail]=useState("");
      const [text,setText]=useState("initial value");
      const [isStudent,setisStudent]=useState(false);
       const [country,setcountry]=useState("England ");
        const [status,setStatus]=useState("");
+
+        const [formInput,setformInput]=useState({
+            name:'',
+            email:'',
+            text:'',
+            isStudent:'false',
+            country:'',
+            status:''
+
+        });
 
     
      const handleTextarea=(e)=>{setText(e.target.value)}
@@ -28,11 +38,11 @@ console.log(`Name:${name}   Email:${email}     INFO :Email:${text}`);
 <form onSubmit={handleSubmit}>
 <label> Name: </label> 
 
-<input type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
+<input type="text" value={name} onChange={(e)=>setformInput({...formInput,name:e.target.value})}></input>
 <p>{name} </p>
 
 <label htmlFor=""> Email: </label>
-<input type="Email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
+<input type="Email" value={email} onChange={(e)=>setformInput({...formInput,email:e.target.value})}></input>
 <p>{email} </p>
 <label htmlFor=""> Info: </label>
 <textarea value={text} onChange={handleTextarea}> </textarea>
