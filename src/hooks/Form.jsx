@@ -1,84 +1,58 @@
-import { useState } from "react";
-
+import { useFormik } from "formik";
 
 export default function Form(){
-    //const [name,setName]=useState("");
-    //const [email,setEmail]=useState("");
-     //const [text,setText]=useState("initial value");
-     //const [isStudent,setisStudent]=useState(false);
-      //const [country,setcountry]=useState("England ");
-      // const [status,setStatus]=useState("");
-
-        const [formInput,setformInput]=useState({
+    
+   const formik = useFormik({
+     initialValues: {
             name:'',
             email:'',
             text:'',
             isStudent:false,
             country:'',
             status:''
-
-        });
-
-    
-     const handleTextarea=(e)=>{setformInput({...formInput,text:e.target.value})}
-      const handleCheckbox=(e)=>{setformInput({...formInput,isStudent:e.target.checked})}
-      const handleSelect=(e)=>{ setformInput({...formInput,country:e.target.value})
-      }
-
-    const handleSubmit=(e)=>{
-       e.preventDefault();
-   setformInput({
-
-            name:formInput.name,
-            email:formInput.email,
-            text:formInput.text,
-            isStudent:formInput.isStudent,
-            country:formInput.country,
-            status:formInput.status
-
-
-           })
- alert(`Name:${formInput.name} \n  Email:${formInput.email} \n    INFO :${formInput.text}
-    isStudent:${formInput.isStudent} \n  Country:${formInput.country} \n    Gender:${formInput.status}
-    `);
-
-    // prevent Default  reload using e.preventDefault()
-    
-console.log(`Name:${formInput.name}   Email:${formInput.email}     INFO :Email:${formInput.text}`);
-
-}
+     },
+     onSubmit: (values) => {
+       console.log(values);
+       
+     },
+   });
+   
+     
  return(
 <div>
 <h2 style={{color:"red"}}>UseStateWheForms</h2>
-<form onSubmit={handleSubmit}>
+<form onSubmit={formik.handleSubmit}>
 <label> Name: </label> 
 
-<input type="text" value={formInput.name} onChange={(e)=>setformInput({...formInput,name:e.target.value})}></input>
-<p>{formInput.name} </p>
+<input type="text" name="name" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur}></input>
+<p>{formik.values.name} </p>
 
 <label htmlFor=""> Email: </label>
-<input type="Email" value={formInput.email} onChange={(e)=>setformInput({...formInput,email:e.target.value})}></input>
-<p>{formInput.email} </p>
+<input type="Email" name="email" value={formik.values.email} onChange={formik.handleChange}
+onBlur={formik.handleBlur} ></input>
+<p>{formik.values.email} </p>
 <label htmlFor=""> Info: </label>
-<textarea value={formInput.text} onChange={handleTextarea}> </textarea>
-<p>{formInput.text} </p>
+<textarea value={formik.values.text} onChange={formik.handleChange} onBlur={formik.handleBlur}> </textarea>
+<p>{formik.values.text} </p>
 <label htmlFor=""> Are you student : </label>
-<input type="checkbox" checked={formInput.isStudent}  onChange={handleCheckbox}/>
-<p>{formInput.isStudent} </p>
+<input type="checkbox" checked={formik.isStudent}  onChange={formik.handleChange} onBlur={formik.handleBlur}/>
+<p>{formik.values.isStudent} </p>
 <label htmlFor=""> Your Country: </label> 
-<select value={formInput.country}  onChange={handleSelect}>
+<select value={formik.values.country}  onChange={formik.handleChange} onBlur={formik.handleBlur}>
 <option >Canada </option>
 <option>china </option>
 <option>England </option>
 <option>yemen</option>
   
 </select>
-<p>{formInput.country} </p>
+<p>{formik.values.country} </p>
 <label htmlFor=""> Gender: </label>  
 Male:
-<input type="radio" value="male" checked={formInput.status=="male"} onChange={(e)=>setformInput({...formInput,status:e.target.value})}/>
-Famiale <input type="radio" value="femaile" checked={formInput.status=="femaile"} onChange={(e)=>setformInput({...formInput,status:e.target.value})}/>
-<p>{formInput.status} </p>
+<input type="radio" value="male" checked={formik.values.status=="male"}
+ onChange={formik.handleChange }/>
+Famiale <input type="radio" value="femaile" checked={formik.values.status=="femaile"} 
+onChange={formik.handleChange }/>
+<p>{formik.values.status} </p>
 
 <br/><br/>
 <button style={{backgroundColor:"blue",color:"white"}}  type="submit">Send</button>
