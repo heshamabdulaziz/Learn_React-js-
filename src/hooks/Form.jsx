@@ -14,6 +14,7 @@ export default function Form(){
      onSubmit: (values) => {
        console.log(values);
        
+       
      },
    });
    
@@ -32,13 +33,13 @@ export default function Form(){
 onBlur={formik.handleBlur} ></input>
 <p>{formik.values.email} </p>
 <label htmlFor=""> Info: </label>
-<textarea value={formik.values.text} onChange={formik.handleChange} onBlur={formik.handleBlur}> </textarea>
+<textarea value={formik.values.text} name="text" onChange={formik.handleChange} onBlur={formik.handleBlur}> </textarea>
 <p>{formik.values.text} </p>
 <label htmlFor=""> Are you student : </label>
-<input type="checkbox" checked={formik.isStudent}  onChange={formik.handleChange} onBlur={formik.handleBlur}/>
+<input type="checkbox" name="isStudent" checked={formik.isStudent}  onChange={formik.handleChange} onBlur={formik.handleBlur}/>
 <p>{formik.values.isStudent} </p>
 <label htmlFor=""> Your Country: </label> 
-<select value={formik.values.country}  onChange={formik.handleChange} onBlur={formik.handleBlur}>
+<select value={formik.values.country} name="country" onChange={formik.handleChange}>
 <option >Canada </option>
 <option>china </option>
 <option>England </option>
@@ -48,10 +49,10 @@ onBlur={formik.handleBlur} ></input>
 <p>{formik.values.country} </p>
 <label htmlFor=""> Gender: </label>  
 Male:
-<input type="radio" value="male" checked={formik.values.status=="male"}
- onChange={formik.handleChange }/>
-Famiale <input type="radio" value="femaile" checked={formik.values.status=="femaile"} 
-onChange={formik.handleChange }/>
+<input type="radio" value="male" name="status" checked={formik.values.status=="male"}
+ onChange={formik.handleChange } onBlur={formik.handleBlur}/>
+Famiale <input type="radio" name="status"  value="femaile" checked={formik.values.status=="femaile"} 
+onChange={formik.handleChange } onBlur={formik.handleBlur}/>
 <p>{formik.values.status} </p>
 
 <br/><br/>
