@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import * as Yup from "yup"
 
 export default function Form(){
     
@@ -6,9 +7,23 @@ export default function Form(){
     referncs 
      1- https://youtu.be/zxZ5lT9lf2o?si=2DgHMDThnzTgO4qm   - youtube
      2-https://formik.org/docs/api/formik                  -doc
-    
+    3-https://formik.org/docs/guides/validation USING yup library for valitation
     
     */
+   const SignupSchema = Yup.object({
+   name: Yup.string()
+     .min(2, 'Too Short!')
+     .max(50, 'Too Long!')
+     .required('Required'),
+   email: Yup.string().email('Invalid email').required('Required'),
+    text: Yup.string()
+     .min(2, 'Too Short!')
+     .max(200, 'Too Long!')
+     .required('Required'),
+     isStudent:Yup.boolean().required("Choose one Required"),
+     country:Yup.string().required("Choose country Required"),
+     status:Yup.boolean().required("Choose your gander is Required"),
+ });
    const formik = useFormik({
      initialValues: {
             name:'',
@@ -18,22 +33,12 @@ export default function Form(){
             country:'',
             status:''
      },
-      validate:(values)=> {
-        const errors={};
-       if(!values.name){errors.name="Field is   required";
-    }
-       if(!values.email){errors.email="Field is   required";}
-       if(!values.text){errors.text="Field is  required";}
-       if(!values.isStudent){errors.isStudent="Field is   required";}
-       if(!values.status){errors.status="Field is  required";}
-       if(!values.country){errors.country="Field is  required";}
-       return errors;
-       }, 
+     
       onSubmit: (values) => {
        alert(JSON.stringify(values, null,2));
        },
     
-
+validationSchema:SignupSchema
     
    });
    
@@ -46,27 +51,29 @@ export default function Form(){
 
 <input type="text" name="name" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur}></input>
 {
-formik.errors.name && <p style={{color:"red"}}><b>{formik.errors.name}</b></p> 
+formik.errors.name && formik.touched.name &&<p style={{color:"red"}}><b>{formik.errors.name}</b></p> 
 }
 
 
 <label htmlFor=""> Email: </label>
 <input type="Email" name="email" value={formik.values.email} onChange={formik.handleChange}
 onBlur={formik.handleBlur} ></input>
-{
-formik.errors.email?<b><p style={{color:"red"}}> {formik.errors.email}</p> </b>:<br/>
+
+ {
+formik.errors.email && formik.touched.email &&<p style={{color:"red"}}><b>{formik.errors.email}</b></p> 
 }
+
 <label htmlFor=""> Info: </label>
 <textarea value={formik.values.text} name="text" onChange={formik.handleChange} onBlur={formik.handleBlur}> </textarea>
 {
-formik.errors.text && <p style={{color:"red"}}><b>{formik.errors.text}</b></p> 
+formik.errors.text &&formik.touched.text &&<p style={{color:"red"}}><b>{formik.errors.text}</b></p> 
 }
 
 <label htmlFor=""> Are you student : </label>
 <input type="checkbox" name="isStudent" checked={formik.isStudent}  onChange={formik.handleChange} onBlur={formik.handleBlur}/>
 
 {
-formik.errors.isStudent && <p style={{color:"red"}}><b>{formik.errors.isStudent}</b></p> 
+formik.errors.isStudent && formik.touched.isStudent && <p style={{color:"red"}}><b>{formik.errors.isStudent}</b></p> 
 }
 
 <label htmlFor=""> Your Country: </label> 
@@ -78,7 +85,7 @@ formik.errors.isStudent && <p style={{color:"red"}}><b>{formik.errors.isStudent}
   
 </select>
 {
-formik.errors.country && <p style={{color:"red"}}><b>{formik.errors.country}</b></p> 
+formik.errors.country &&formik.touched.country && <p style={{color:"red"}}><b>{formik.errors.country}</b></p> 
 }
 
 <label htmlFor=""> Gender: </label>  
@@ -88,7 +95,7 @@ Male:
 Famiale <input type="radio" name="status"  value="femaile" checked={formik.values.status=="femaile"} 
 onChange={formik.handleChange } onBlur={formik.handleBlur}/>
 {
-formik.errors.status && <p style={{color:"red"}}><b>{formik.errors.status}</b></p> 
+formik.errors.status && formik.touched.status&&<p style={{color:"red"}}><b>{formik.errors.status}</b></p> 
 }
 
 
