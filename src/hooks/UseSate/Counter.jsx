@@ -11,7 +11,19 @@ export default function Counter(){
 <button style={{backgroundColor:"gray",color:"white"}} onClick={()=>{
     setCounter(counter-1);
 }} >-</button>
- <button style={{backgroundColor:"blue",color:"white"}} onClick={()=>{setCounter(counter+1);}} >+</button>
+ <button style={{backgroundColor:"blue",color:"white"}} onClick={()=>{
+    //
+    setCounter(counter+1);
+     setCounter(counter+1);
+      setCounter(counter+1);
+       setCounter(counter+1);
+        setCounter(counter+1);
+
+}
+    
+    
+    
+    }>+</button>
 
 </>
 
