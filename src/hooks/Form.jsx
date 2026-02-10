@@ -1,8 +1,21 @@
 import { useFormik } from "formik";
+import { useState } from "react";
 import * as Yup from "yup"
 
 export default function Form(){
-    
+  const[users,setUsers]=useState([
+        {id:1,name:"john",email:"hesham@gmail.com",text:"bbnshwss",isStudent:false, country:"CANADA" },
+       
+          ] )
+
+const handlsubmit1=(values) => {
+   // values.preventDefault()
+    setUsers([...users,{...values,id:users.length()+1}])
+       //alert(JSON.stringify(values, null,2));
+       
+}
+
+
     /* 
     referncs 
      1- https://youtu.be/zxZ5lT9lf2o?si=2DgHMDThnzTgO4qm   - youtube
@@ -11,18 +24,12 @@ export default function Form(){
     
     */
    const SignupSchema = Yup.object({
-   name: Yup.string()
-     .min(2, 'Too Short!')
-     .max(50, 'Too Long!')
-     .required('Required'),
+   name: Yup.string().min(2, 'Too Short!') .max(50, 'Too Long!').required('Required'),
    email: Yup.string().email('Invalid email').required('Required'),
-    text: Yup.string()
-     .min(2, 'Too Short!')
-     .max(200, 'Too Long!')
-     .required('Required'),
+    text: Yup.string() .min(2, 'Too Short!') .max(200, 'Too Long!').required('Required'),
      isStudent:Yup.boolean().required("Choose one Required"),
      country:Yup.string().required("Choose country Required"),
-     status:Yup.boolean().required("Choose your gander is Required"),
+     status:Yup.string().required("Choose your gander is Required"),
  });
    const formik = useFormik({
      initialValues: {
@@ -34,9 +41,7 @@ export default function Form(){
             status:''
      },
      
-      onSubmit: (values) => {
-       alert(JSON.stringify(values, null,2));
-       },
+      onSubmit:handlsubmit1,
     
 validationSchema:SignupSchema
     
@@ -70,7 +75,8 @@ formik.errors.text &&formik.touched.text &&<p style={{color:"red"}}><b>{formik.e
 }
 
 <label htmlFor=""> Are you student : </label>
-<input type="checkbox" name="isStudent" checked={formik.isStudent}  onChange={formik.handleChange} onBlur={formik.handleBlur}/>
+<input type="checkbox" name="isStudent" checked={formik.isStudent} 
+ onChange={formik.handleChange} onBlur={formik.handleBlur}/>
 
 {
 formik.errors.isStudent && formik.touched.isStudent && <p style={{color:"red"}}><b>{formik.errors.isStudent}</b></p> 
@@ -90,7 +96,7 @@ formik.errors.country &&formik.touched.country && <p style={{color:"red"}}><b>{f
 
 <label htmlFor=""> Gender: </label>  
 Male:
-<input type="radio" value="male" name="status" checked={formik.values.status=="male"}
+<input type="radio" value="male" name="status" checked={formik.values.status==="male"}
  onChange={formik.handleChange } onBlur={formik.handleBlur}/>
 Famiale <input type="radio" name="status"  value="femaile" checked={formik.values.status=="femaile"} 
 onChange={formik.handleChange } onBlur={formik.handleBlur}/>
@@ -103,6 +109,38 @@ formik.errors.status && formik.touched.status&&<p style={{color:"red"}}><b>{form
 <button style={{backgroundColor:"blue",color:"white"}}  type="submit">Send</button>
 
 </form>
+
+
+
+<table style={{}}>
+    <thead> <h3 style={{backgroundColor:"red",color:"white"}}>Rendering Lists using map  </h3></thead>
+    <tr>
+<th>UserName </th>
+  <th>email </th> 
+   <th>Country </th>               
+
+    </tr>
+
+{
+    
+
+users.map((u)=><tr key={u.id}>
+ <td> {u.name }  </td> 
+ <td>{u.email }   </td> 
+ <td> {u.country } </td>   
+  <td> <button className="btn" style={{backgroundColor:"green" ,color:"white"}}>Add</button> </td> 
+   <td> <button className="btn" style={{backgroundColor:"blue" ,color:"white"}}>Update</button> </td> 
+ <td> <button  className="btn" style={{backgroundColor:"red" ,color:"white"}}>Delete</button> </td>                 
+ 
+  </tr>
+
+)
+
+
+}
+
+</table>
+
 
 
 </div>

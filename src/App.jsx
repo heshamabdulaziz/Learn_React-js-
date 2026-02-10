@@ -7,6 +7,8 @@ import PersonCard from './PersonCard'
 import RenderingLists from './RenderingLists'
 import Button from './hooks/UseSate/Button'
 import Form from './hooks/Form'
+import Crud from './hooks/UseSate/Crud'
+import Counter from './hooks/UseSate/Counter'
 
  const  show=true;
 function App() {
@@ -15,6 +17,10 @@ function App() {
 
   return (
     <>
+    <Counter/>
+   <hr></hr>
+<Crud/>
+<hr></hr>
     <Form/>
     <hr/>
   <Button/>

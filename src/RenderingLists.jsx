@@ -1,5 +1,11 @@
 import "./RenderLists.css"
 export default function RenderingLists(){
+
+    const handleAdd=()=>{
+
+
+
+    }
     const users=[
         {id:1,   userName:"john",age:27, country:"USA" },
         { id:2, userName:"hesham",age:37, country:"CANADA" },
@@ -8,6 +14,11 @@ export default function RenderingLists(){
     ]
 
  return(
+    <div>
+        <form>
+UseName:<input type="text"></input><br/>
+
+        </form>
   
 <table style={{}}>
     <thead> <h3 style={{backgroundColor:"red",color:"white"}}>Rendering Lists using map  </h3></thead>
@@ -23,7 +34,7 @@ users.map((user)=><tr key={user.id}>
  <td> {user.userName }  </td> 
  <td>{user.age }   </td> 
  <td> {user.country } </td>   
-  <td> <button className="btn" style={{backgroundColor:"green" ,color:"white"}}>Add</button> </td> 
+  <td> <button className="btn" style={{backgroundColor:"green" ,color:"white"}} onClick={handleAdd}>Add</button> </td> 
    <td> <button className="btn" style={{backgroundColor:"blue" ,color:"white"}}>Update</button> </td> 
  <td> <button  className="btn" style={{backgroundColor:"red" ,color:"white"}}>Delete</button> </td>                 
  
@@ -35,6 +46,9 @@ users.map((user)=><tr key={user.id}>
 }
 
 </table>
+
+
+</div>
 
     )
 
