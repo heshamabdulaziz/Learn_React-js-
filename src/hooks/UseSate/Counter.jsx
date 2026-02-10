@@ -9,21 +9,19 @@ export default function Counter(){
 
 <p style={{fontSize:30}}>{counter}</p>
 <button style={{backgroundColor:"gray",color:"white"}} onClick={()=>{
+    
     setCounter(counter-1);
 }} >-</button>
  <button style={{backgroundColor:"blue",color:"white"}} onClick={()=>{
-    //
-    setCounter(counter+1);
-     setCounter(counter+1);
-      setCounter(counter+1);
-       setCounter(counter+1);
-        setCounter(counter+1);
+    //this way call >Repeated State Updates in React
+    setCounter((count)=>count+1);
+       setCounter((count)=>count+1);
+         setCounter((count)=>count+1);
+         setCounter((count)=>count+1);
+         setCounter((count)=>count+1);
 
 }
-    
-    
-    
-    }>+</button>
+     }>+</button>
 
 </>
 
