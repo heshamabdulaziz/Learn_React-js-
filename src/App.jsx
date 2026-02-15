@@ -9,14 +9,25 @@ import Button from './hooks/UseSate/Button'
 import Form from './hooks/Form'
 import Crud from './hooks/UseSate/Crud'
 import Counter from './hooks/UseSate/Counter'
+import TaskInput from './hooks/UseSate/TaskInput'
 
  const  show=true;
 function App() {
-  const [count, setCount] = useState(0)
- 
+  const [count, setCount] = useState(0);
+  const [inputText,setinputText] = useState(" ");
+  const [inputText2,setinputText2] = useState(" ");
+
+ function handleInputCHang(val){
+
+setinputText(val);
+ }
 
   return (
     <>
+    <TaskInput handleSubmit={handleInputCHang}  setText2={setinputText2}/>
+    <h2>function  passed :{inputText}</h2>
+    <h2> Text2 passed :{inputText2}</h2>
+    <hr/>
     <Counter/>
    <hr></hr>
 <Crud/>
