@@ -10,6 +10,7 @@ import Form from './hooks/Form'
 import Crud from './hooks/UseSate/Crud'
 import Counter from './hooks/UseSate/Counter'
 import TaskInput from './hooks/UseSate/TaskInput'
+import UseRefExmple from './hooks/Useref/UseRefExmple'
 
  const  show=true;
 function App() {
@@ -24,9 +25,11 @@ setinputText(val);
 
   return (
     <>
+    <UseRefExmple/>
+    <hr/>
     <TaskInput handleSubmit={handleInputCHang}  setText2={setinputText2}/>
-    <h2>function  passed :{inputText}</h2>
-    <h2> Text2 passed :{inputText2}</h2>
+    <h2> pass function  :{inputText}</h2>
+    <h2>  pass Text2 :{inputText2}</h2>
     <hr/>
     <Counter/>
    <hr></hr>
