@@ -11,6 +11,7 @@ import Crud from './hooks/UseSate/Crud'
 import Counter from './hooks/UseSate/Counter'
 import TaskInput from './hooks/UseSate/TaskInput'
 import UseRefExmple from './hooks/Useref/UseRefExmple'
+import UseEffectExample from './hooks/UseEffect/UseEffectExample'
 
  const  show=true;
 function App() {
@@ -25,6 +26,8 @@ setinputText(val);
 
   return (
     <>
+    <UseEffectExample/>
+    <hr></hr>
     <UseRefExmple/>
     <hr/>
     <TaskInput handleSubmit={handleInputCHang}  setText2={setinputText2}/>
