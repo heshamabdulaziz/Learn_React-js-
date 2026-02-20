@@ -12,6 +12,7 @@ import Counter from './hooks/UseSate/Counter'
 import TaskInput from './hooks/UseSate/TaskInput'
 import UseRefExmple from './hooks/Useref/UseRefExmple'
 import UseEffectExample from './hooks/UseEffect/UseEffectExample'
+import UseMemoExample from './hooks/Usememo/UseMemoExample'
 
  const  show=true;
 function App() {
@@ -26,6 +27,8 @@ setinputText(val);
 
   return (
     <>
+    <UseMemoExample/>
+    <hr></hr>
     <UseEffectExample/>
     <hr></hr>
     <UseRefExmple/>
