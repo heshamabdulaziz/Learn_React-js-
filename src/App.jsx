@@ -13,6 +13,7 @@ import TaskInput from './hooks/UseSate/TaskInput'
 import UseRefExmple from './hooks/Useref/UseRefExmple'
 import UseEffectExample from './hooks/UseEffect/UseEffectExample'
 import UseMemoExample from './hooks/Usememo/UseMemoExample'
+import ContextApiExample from './hooks/ContextApi/ContextApiExample'
 
  const  show=true;
 function App() {
@@ -27,6 +28,7 @@ setinputText(val);
 
   return (
     <>
+    <ContextApiExample/>
     <UseMemoExample/>
     <hr></hr>
     <UseEffectExample/>
