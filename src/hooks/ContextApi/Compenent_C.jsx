@@ -1,5 +1,10 @@
+import { useContext } from "react"
+import { ProductContext } from "./Contextapi"
 
-const Compenent_C=({product})=>{
+
+const Compenent_C=()=>{
+    
+    const product=useContext(ProductContext)
 /*
 we ues contextapi hook to share data data between commponent& prevent drilling 
 

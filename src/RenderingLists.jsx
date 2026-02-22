@@ -15,10 +15,7 @@ export default function RenderingLists(){
 
  return(
     <div>
-        <form>
-UseName:<input type="text"></input><br/>
 
-        </form>
   
 <table style={{}}>
     <thead> <h3 style={{backgroundColor:"red",color:"white"}}>Rendering Lists using map  </h3></thead>

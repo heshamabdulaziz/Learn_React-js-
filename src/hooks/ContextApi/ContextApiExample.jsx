@@ -1,17 +1,22 @@
-import { useState } from "react"
-import Compenent_A from "./Compenent_A.JSX";
+import Compenent_A from "./Compenent_A.JSX"
+import { ProductContext } from "./Contextapi"
 
 const ContextApiExample=()=>{
 /*
 we ues contextapi hook to share data data between commponent& prevent drilling 
 
 */
-const [product,setprodect]=useState("laptop");
+
+
 return(
 <div>
-<h2>parant component (ContextApiExample) {product}</h2>
 
-<Compenent_A product={product}/>
+<h2>parant component (ContextApiExampledd) {ProductContext}</h2>
+
+
+
+
+
 </div>
 
     

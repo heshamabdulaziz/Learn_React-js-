@@ -14,12 +14,21 @@ import UseRefExmple from './hooks/Useref/UseRefExmple'
 import UseEffectExample from './hooks/UseEffect/UseEffectExample'
 import UseMemoExample from './hooks/Usememo/UseMemoExample'
 import ContextApiExample from './hooks/ContextApi/ContextApiExample'
+import { ProductContext } from './hooks/ContextApi/Contextapi'
+import Compenent_A from './hooks/ContextApi/Compenent_A.JSX'
+
+
+
 
  const  show=true;
 function App() {
+  
+   
   const [count, setCount] = useState(0);
   const [inputText,setinputText] = useState(" ");
   const [inputText2,setinputText2] = useState(" ");
+
+  const [product,setprodect]=useState("Laptop");
 
  function handleInputCHang(val){
 
@@ -28,7 +37,10 @@ setinputText(val);
 
   return (
     <>
+    <ProductContext.Provider value={product}> 
+   
     <ContextApiExample/>
+       <Compenent_A/>
     <UseMemoExample/>
     <hr></hr>
     <UseEffectExample/>
@@ -100,6 +112,7 @@ setinputText(val);
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      </ProductContext.Provider> 
     </>
   )
 }
