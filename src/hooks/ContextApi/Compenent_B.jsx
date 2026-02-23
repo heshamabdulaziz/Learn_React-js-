@@ -12,7 +12,7 @@ return(
 <div>
 <h3>  Compenent B b </h3>
 
-<p style={{color:"red"}}> product is {ProductContext} </p>  
+<p style={{color:"red"}}> product is = {ProductContext} </p>  
 
 
 

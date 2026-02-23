@@ -16,6 +16,7 @@ import UseMemoExample from './hooks/Usememo/UseMemoExample'
 import ContextApiExample from './hooks/ContextApi/ContextApiExample'
 import { ProductContext } from './hooks/ContextApi/Contextapi'
 import Compenent_A from './hooks/ContextApi/Compenent_A.JSX'
+import UseEffectWith_Fetch_Data from './hooks/UseEffect/UseEffectWith_Fetch_Data'
 
 
 
@@ -42,6 +43,9 @@ setinputText(val);
     <ContextApiExample/>
        <Compenent_A/>
     <UseMemoExample/>
+
+    <hr></hr>
+   <UseEffectWith_Fetch_Data/>
     <hr></hr>
     <UseEffectExample/>
     <hr></hr>
