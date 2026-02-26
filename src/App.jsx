@@ -23,6 +23,10 @@ import About from './React_Router_Dom/About'
 import Contact from './React_Router_Dom/Contact'
 import "./App.css";
 import Notfound from './React_Router_Dom/Notfound'
+import Product from './React_Router_Dom/Product'
+import AddProduct from './React_Router_Dom/AddProduct'
+import UpdateProduct from './React_Router_Dom/updateProduct'
+import DeleteeProduct from './React_Router_Dom/DeleteProduct'
 
 
 
@@ -57,14 +61,24 @@ setinputText(val);
    <nav>
         <NavLink to="/">Home</NavLink> | 
         <NavLink to="/Contact">Contact </NavLink> | 
-         <NavLink to="/about">About</NavLink> 
-        
+       
+         <NavLink to="/product">Products</NavLink> |
+           <NavLink to="/about">About</NavLink> 
       </nav>  
 
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        
+        <Route path="/product" element={<Product />}>
+      
+          <Route path="AddProduct" element={<AddProduct/>} />
+          <Route path="UpdateProduct" element={<UpdateProduct/>} />
+          <Route path="DeleteeProduct" element={<DeleteeProduct/>} />
+
+         </Route>
+
          <Route path="*" element={<Notfound/>} />
       </Routes>
 
