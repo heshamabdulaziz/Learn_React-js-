@@ -21,7 +21,8 @@ import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom'
 import Home from './React_Router_Dom/Home'
 import About from './React_Router_Dom/About'
 import Contact from './React_Router_Dom/Contact'
-
+import "./App.css";
+import Notfound from './React_Router_Dom/Notfound'
 
 
 
@@ -41,6 +42,7 @@ function App() {
 setinputText(val);
  }
 
+
   return (
    
   <BrowserRouter>
@@ -50,17 +52,20 @@ setinputText(val);
    
    
   <hr></hr>
+
   <h2> React Router dom </h2>
    <nav>
         <NavLink to="/">Home</NavLink> | 
-        <Link to="/Contact">Contact </Link> | 
-         <Link to="/about">About</Link> |
+        <NavLink to="/Contact">Contact </NavLink> | 
+         <NavLink to="/about">About</NavLink> 
+        
       </nav>  
 
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+         <Route path="*" element={<Notfound/>} />
       </Routes>
 
     
