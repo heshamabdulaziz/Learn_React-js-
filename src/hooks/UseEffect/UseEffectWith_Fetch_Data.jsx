@@ -1,52 +1,24 @@
-import axios from "axios"
-import { useEffect, useState } from "react";
+
+import {useState } from "react";
+import { useApi } from "../Customhook/UseApi";
+import { useFetchone } from "../Customhook/fectchOne";
 
 
 const  UseEffectWith_Fetch_Data=()=>{
- const[posts,setPosts]=useState([]);
+ const[posts,loading,error]=useApi('https://jsonplaceholder.typicode.com/posts');
  const[postId,setPostId]=useState(1);
- const[post,setPost]=useState({});
-const[loading,setloading]=useState(true)
-const[error,setError]=useState(false)
+  const[post]=useFetchone("https://jsonplaceholder.typicode.com/posts",postId);
 
- /*const fetchPosts=async()=>{
-const res=await axios.get("https://jsonplaceholder.typicode.com/posts");
-return setPosts(res.data);
- 
- }  */
+const fetchOneHandler=(e)=>{
+            setPostId(e.target.value)  
+        }
 
- useEffect(()=>{
-    axios.get(`https://jsonplaceholder.typicode.com/posts`).then((res)=>{
-        setPosts(res.data)
-        setloading(false)
-    }).catch((err)=>{
-        setError(true)
-        setloading(false)
-        console.log(err.error);
-        
-    })
 
- },[])
 
- //fetch one post 
- 
-  useEffect(()=>{
-    axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`).then((res)=>{
-        setPost(res.data)
-        setloading(false)
-    }).catch((err)=>{
-        setError(true)
-        setloading(false)
-        console.log(err.error);
-        
-    })
-
- },[postId])
- 
 return(
    <div>
     <label>Enter on post Number</label>
-    <input type="number" value={postId} placeholder="Enter postNumber " onChange={(e)=>setPostId(e.target.value)}/>
+    <input type="number" value={postId} placeholder="Enter postNumber " onChange={fetchOneHandler}/>
   <h2>Fetch one post </h2>
   {
 

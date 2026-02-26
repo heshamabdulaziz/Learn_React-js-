@@ -1,0 +1,15 @@
+
+
+
+const About=()=>{
+
+return(
+    <div>
+<h2> Aboute </h2>
+  
+
+</div>
+)
+
+}
+export default About

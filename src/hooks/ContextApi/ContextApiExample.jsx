@@ -14,8 +14,7 @@ return(
 <h2>parant component (ContextApiExampledd) {ProductContext}</h2>
 
 
-
-
+<Compenent_A/>
 
 </div>
 

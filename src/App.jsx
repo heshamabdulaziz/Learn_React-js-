@@ -17,19 +17,24 @@ import ContextApiExample from './hooks/ContextApi/ContextApiExample'
 import { ProductContext } from './hooks/ContextApi/Contextapi'
 import Compenent_A from './hooks/ContextApi/Compenent_A.JSX'
 import UseEffectWith_Fetch_Data from './hooks/UseEffect/UseEffectWith_Fetch_Data'
+import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom'
+import Home from './React_Router_Dom/Home'
+import About from './React_Router_Dom/About'
+import Contact from './React_Router_Dom/Contact'
 
 
 
 
  const  show=true;
 function App() {
+
   
    
   const [count, setCount] = useState(0);
   const [inputText,setinputText] = useState(" ");
   const [inputText2,setinputText2] = useState(" ");
 
-  const [product,setprodect]=useState("Laptop");
+  const [product,setprodect]=useState("Toshiba Laptop ");
 
  function handleInputCHang(val){
 
@@ -37,8 +42,33 @@ setinputText(val);
  }
 
   return (
-    <>
-    <ProductContext.Provider value={product}> 
+   
+  <BrowserRouter>
+   <ProductContext.Provider value={product}> 
+
+   <>
+   
+   
+  <hr></hr>
+  <h2> React Router dom </h2>
+   <nav>
+        <NavLink to="/">Home</NavLink> | 
+        <Link to="/Contact">Contact </Link> | 
+         <Link to="/about">About</Link> |
+      </nav>  
+
+       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+    
+      
+      
+
+    <hr></hr>
+   
    
     <ContextApiExample/>
        <Compenent_A/>
@@ -116,8 +146,13 @@ setinputText(val);
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      </ProductContext.Provider> 
+     
+
+      
+    
     </>
+ </ProductContext.Provider> 
+    </BrowserRouter>
   )
 }
 function Mycomponent(){
