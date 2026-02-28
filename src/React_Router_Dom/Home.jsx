@@ -6,7 +6,7 @@ const Home=()=>{
 return(
     <div>
 <h2>  welecme to Home  page</h2>
-  click here to contact us<button onClick={()=>navige("contact")}>login</button>
+  click here to contact us<button onClick={()=>navige("/login")}>login</button>
 
 </div>
 )
