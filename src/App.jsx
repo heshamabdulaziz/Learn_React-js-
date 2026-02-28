@@ -24,9 +24,10 @@ import Contact from './React_Router_Dom/Contact'
 import "./App.css";
 import Notfound from './React_Router_Dom/Notfound'
 import Product from './React_Router_Dom/Product'
-import AddProduct from './React_Router_Dom/AddProduct'
-import UpdateProduct from './React_Router_Dom/updateProduct'
-import DeleteeProduct from './React_Router_Dom/DeleteProduct'
+import AddProduct from './React_Router_Dom/nestedproducts/AddProduct'
+import UpdateProduct from './React_Router_Dom/nestedproducts/UpdateProduct'
+import DeleteeProduct from './React_Router_Dom/nestedproducts/DeleteProduct'
+import Login from './React_Router_Dom/Login'
 
 
 
@@ -63,14 +64,16 @@ setinputText(val);
         <NavLink to="/Contact">Contact </NavLink> | 
        
          <NavLink to="/product">Products</NavLink> |
-           <NavLink to="/about">About</NavLink> 
+           <NavLink to="/about">About</NavLink> |
+             <NavLink to="/login">Login</NavLink> 
       </nav>  
 
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        
+        <Route path='/login'  element={<Login/>}/>
+
         <Route path="/product" element={<Product />}>
       
           <Route path="AddProduct" element={<AddProduct/>} />

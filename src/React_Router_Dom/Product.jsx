@@ -12,7 +12,7 @@ return(
 <nav>
 <NavLink to="AddProduct">Add</NavLink>|
   <NavLink to="UpdateProduct">Update</NavLink>|
-  <NavLink to="DeleteeProduct">Add</NavLink>|
+  <NavLink to="DeleteeProduct">delete</NavLink>|
 
 </nav>
  <Outlet/>  
